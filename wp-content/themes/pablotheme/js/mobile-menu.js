@@ -1,9 +1,10 @@
-// Este código deve ser salvo em um arquivo chamado 'mobile-menu.js' no diretório do tema.
 document.addEventListener('DOMContentLoaded', function() {
-    var menuIcon = document.querySelector('.menu-icon');
-    var nav = document.querySelector('nav');
+    var menuToggle = document.querySelector('.menu-toggle');
+    var mainNav = document.querySelector('#primary-menu');
 
-    menuIcon.addEventListener('click', function() {
-        nav.classList.toggle('active');
+    menuToggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('active');
     });
 });

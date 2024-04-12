@@ -16,21 +16,7 @@ function mytheme_menus() {
 }
 add_action('init', 'mytheme_menus');
 
-function meu_tema_scripts() {
-    // Carrega os estilos e scripts.
-    wp_enqueue_style('style', get_stylesheet_uri());
-    wp_enqueue_script('menu', get_template_directory_uri() . '/mobile-menu.js', array('jquery'), '', true);
+function theme_scripts() {
+    wp_enqueue_script('mobile-menu', get_template_directory_uri() . '/mobile-menu.js', array('jquery'), '', true);
 }
-
-add_action('wp_enqueue_scripts', 'meu_tema_scripts');
-
-// Registrar localização do menu.
-function meu_tema_menus() {
-    register_nav_menus(
-        array(
-            'primary' => __('Primary Menu', 'meu_tema'),
-        )
-    );
-}
-
-add_action('init', 'meu_tema_menus');
+add_action('wp_enqueue_scripts', 'theme_scripts');
