@@ -1,0 +1,325 @@
+/**
+ * Theme Name: Project I Theme
+ * Author: Victoria Shmakov
+ * Description: A custom theme WEBD3027 Project I.
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+ :root {
+    --text: #000000;
+    --background: #FFFFFF;
+    --primary: #7923E2;
+    --footer: #FAF5FE;
+    --line-color: #cccccc;
+}
+
+.hamburger-icon {
+    display: none;
+
+}
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    grid-template-columns: 15% 1fr; /* Allocate 15% of the width to the sidebar and the rest to the content */
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background);
+}
+
+header {
+    grid-column: 1; 
+    grid-row: 1 / -1; 
+    background-color: var(--primary);
+    color: #fff;
+    padding-right: 3rem;
+}
+.container {
+    grid-column: 2 / 3; 
+    grid-row: 1 / 2; 
+    padding: 20px; 
+    margin-left: 3rem;
+    
+}
+
+footer {
+    grid-column: 2 / 3; 
+    grid-row: 3 / 4; 
+    width: 100%;
+    background-color: var(--footer);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+footer ul.menu a {
+    color: black; /* Change the color to black */
+    text-decoration: none; /* Removes underline from links */
+    text-align:left;
+}
+
+footer ul.menu {
+    padding-inline-start: 1px;
+}
+
+
+    ul.menu {
+        list-style: none;
+        a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+.title h1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'roboto mono', monospace;
+}
+
+nav {
+    ul {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        height: 100%;
+    }
+
+    li {
+        
+        height: 100%; 
+        padding-bottom:1rem;
+        border-top: solid var(--line-color);
+        border-width: 50%;
+        padding-top: 1rem;
+        
+    }
+    a {
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: none;        
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 0.5rem;
+        font-size: 18px; 
+        justify-content: center;
+    }
+}
+
+nav ul li:last-child {
+    border-bottom: solid var(--line-color); /* Add border bottom */
+    border-width: 50%; /* Set the width of the bottom border */
+    padding-bottom:1rem;
+}
+
+.pagination {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: top;
+    margin-bottom: 5rem;
+}
+
+.pagination a {
+    color: #7923E2;
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: large;
+    padding-bottom:6rem;
+  
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+    color: darken(#7923E2, 10%); 
+}
+
+.card-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:4rem;
+    z-index: 99;
+
+    .card-body {
+        background-color: #fff;
+        border-bottom: 1px solid var(--line-color);
+        overflow: hidden;
+    }
+
+        .card-meta {
+            font-size: 0.9rem; 
+            color: #777; 
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem; 
+            margin-bottom: .5rem; 
+            color: var(--text); 
+            text-decoration: none;
+            a {
+                color: var(--text);
+                text-decoration: none;
+            }
+        }
+        
+        .card-text {
+            font-size: 1rem; 
+            line-height: 1.6;
+        }
+        .card-author {
+            a {
+                color: #7923E2;
+                text-decoration: none;
+            }
+        }
+    }
+.read-more {
+    color: #7923E2;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 1rem;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+
+        input {
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            
+        }
+    }
+
+    .search-submit{
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        border-radius: 1px;
+    }
+    button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #7923E2;
+        color: #fff;
+        cursor: pointer;
+    }
+
+
+.search-title{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #7923E2;
+    text-align: left;
+
+}
+
+
+@media (max-width: 1408px) {
+    /* Adjust the grid layout for screens smaller than 1198px but larger than 768px */
+    body {
+        grid-template-columns: 1fr; /* Only one column */
+    }
+
+
+    .container {
+        margin-left: 0rem; /* Or as much space as you need */
+        margin-right: 1rem;
+    }
+
+    footer ul.menu a {
+        color: black; /* Change the color to black */
+        text-decoration: none; /* Removes underline from links */
+        text-align:left;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide the sidebar and set the header to be on top */
+    header {
+        position: static; 
+        
+        width: 100%;
+        height: auto;
+        grid-column: 1 / -1; /* Make sure the header spans all columns */
+        grid-row: 1;
+    }
+
+    /* Adjust the main container */
+    .container {
+        grid-column: 1 / -1; /* Make sure content spans all columns */
+        grid-row: 2; /* Adjust the grid row accordingly */
+        margin-left: 2rem; /* Reset the margin */
+    }
+
+    /* Style for the hamburger menu */
+    .hamburger-menu {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 1rem; /* Add padding on left and right */
+    }
+
+    .container title h1 a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'roboto mono', monospace;
+        
+    }
+    /* Initially hide the navigation links */
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* Show the navigation links when nav is active */
+    nav.active ul {
+        display: flex;
+    }
+
+    /* Style your nav links here */
+    nav ul li {
+        width: 100%;
+        text-align: center; /* Align the links to the left */
+    }
+
+    /* Adjust the footer */
+    footer {
+        grid-column: 1 / -1; /* Footer should span all columns */
+        grid-row: 3; /* Position the footer in the third row */
+
+    }
+    footer ul.menu a {
+        color: black; /* Change the color to black */
+        text-decoration: none; /* Removes underline from links */
+        text-align:left;
+    }
+
+    nav ul.menu a {
+        color: white; 
+        text-decoration: none; 
+  
+
+    }
+
+
+    .hamburger-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
+    .search-container {
+        display: none;
+    }
+}

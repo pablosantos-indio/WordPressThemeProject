@@ -1,33 +1,18 @@
 <?php
+
 /**
  * Template Name: Landing Page
+ * template-landingPage.php - Um modelo para páginas de destino.
  */
-?>
 
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+get_header(); ?>
 
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head(); ?>
-</head>
+<div class="container">
+    <h1><?php the_title(); ?></h1>
+    <?php the_content(); ?>
+</div>
 
-<body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <header>
-        <div class="container">
-            <div class="title">
-                <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
-    </div>
-
-    <?php wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
+
 </html>

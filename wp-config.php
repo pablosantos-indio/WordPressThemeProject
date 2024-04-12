@@ -3,7 +3,7 @@
  * The base configuration for WordPress
  *
  * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * You don't have to use the website, you can copy this file to "wp-config.php"
  * and fill in the values.
  *
  * This file contains the following configurations:
@@ -75,14 +75,14 @@ define( 'DB_COLLATE', getenv_docker('WORDPRESS_DB_COLLATE', '') );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         getenv_docker('WORDPRESS_AUTH_KEY',         '7016d94f13d9663a51bc63b20b0c2c14b3f96acd') );
-define( 'SECURE_AUTH_KEY',  getenv_docker('WORDPRESS_SECURE_AUTH_KEY',  '307fa3eda9345708a90bf579966d2908f81394c2') );
-define( 'LOGGED_IN_KEY',    getenv_docker('WORDPRESS_LOGGED_IN_KEY',    '41c4bae806f68f23826add43a38db7a0692aded1') );
-define( 'NONCE_KEY',        getenv_docker('WORDPRESS_NONCE_KEY',        '651ba8a72f8f99a9d4e474f614a34db21dcdb516') );
-define( 'AUTH_SALT',        getenv_docker('WORDPRESS_AUTH_SALT',        'a8d2d2d9009de513300a1b299a726b4d7c9a88f5') );
-define( 'SECURE_AUTH_SALT', getenv_docker('WORDPRESS_SECURE_AUTH_SALT', 'b0a3a0ecd438e619e00f49f5502395ebf80df802') );
-define( 'LOGGED_IN_SALT',   getenv_docker('WORDPRESS_LOGGED_IN_SALT',   '816593fa88aeb0ef0da8e0833e13611e5588ea1d') );
-define( 'NONCE_SALT',       getenv_docker('WORDPRESS_NONCE_SALT',       '82dfa87e71ec160bc76950432c84445371776166') );
+define( 'AUTH_KEY',         getenv_docker('WORDPRESS_AUTH_KEY',         'ef9b46849ab23261b76719a4091a25b9f75f1ddf') );
+define( 'SECURE_AUTH_KEY',  getenv_docker('WORDPRESS_SECURE_AUTH_KEY',  '601a1cf41c8d9d4c83ca4faf1e08813f7c38c124') );
+define( 'LOGGED_IN_KEY',    getenv_docker('WORDPRESS_LOGGED_IN_KEY',    '2466a5817fe0310cf6db6ff048888feff2ab70d2') );
+define( 'NONCE_KEY',        getenv_docker('WORDPRESS_NONCE_KEY',        '86b348b31fa8401ebe6103217c5362908460afbe') );
+define( 'AUTH_SALT',        getenv_docker('WORDPRESS_AUTH_SALT',        '55c816758fd653a32116d11541699ef0a3b6b096') );
+define( 'SECURE_AUTH_SALT', getenv_docker('WORDPRESS_SECURE_AUTH_SALT', '83c582edf65f4d34a7d6655e95e986b717a7048d') );
+define( 'LOGGED_IN_SALT',   getenv_docker('WORDPRESS_LOGGED_IN_SALT',   'bbb414373529dc407aeff2e840c0d35f41ecae53') );
+define( 'NONCE_SALT',       getenv_docker('WORDPRESS_NONCE_SALT',       'c17b4800c09018aadad5f9b6776642acfe2cf0f1') );
 // (See also https://wordpress.stackexchange.com/a/152905/199287)
 
 /**#@-*/
@@ -107,7 +107,7 @@ $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', !! true );
+define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
 
 /* Add any custom values between this line and the "stop editing" line. */
 

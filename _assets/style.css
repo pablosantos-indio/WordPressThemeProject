@@ -1,156 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
-
-:root {
-    --text: #000000;
-    --background: #f2f2f2;
-    --primary: #104fcb;
-    --secondary: #ff1fe5;
-    --accent: #000094;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-body {
-    color: var(--text);
-    background-color: var(--background);
-    font-family: 'OpenSans', monospace;
-    font-size: 1.2rem;
-    line-height: 1.5;
+/* Reset básico para os elementos */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6 {
+/* Estilos básicos do body */
+body {
     font-family: 'Roboto Mono', monospace;
+    background: #FFFFFF;
 }
 
+/* Estrutura do container principal */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
 }
 
-header {
-    height: 100px;
-    background-color: var(--primary);
-    color: #fff;
-    padding: 0 2rem;
+/* Cabeçalho e título do site */
+.header {
+    background: #7923E2;
+    width: 350px;
+    min-height: 100vh;
+    border-right: 1px solid #707070;
+    padding: 35px 0 0 40px;
+}
 
+.header h1 {
+    font-size: 45px;
+    line-height: 59px;
+    color: #FFFFFF;
+    margin-bottom: 62px; /* Ajustado para manter o espaço antes dos itens de menu */
+}
+
+/* Estilização da navegação lateral */
+.navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation a {
+    font-size: 16px; /* Tamanho de fonte de exemplo para os itens de menu */
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 18px 0; /* Valor de exemplo para altura de 55px nos itens de menu */
+    border-bottom: 1px solid #FFFFFF;
+    margin-left: 0.5px;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #6f22dc; /* Cor de hover de exemplo */
+}
+
+/* Estilos da área de conteúdo principal */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* ...outros estilos... */
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
     .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        max-width: none;
-    }
-}
-
-nav {
-    height: 100%;
-
-    ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        height: 100%;
+        flex-direction: column;
     }
 
-    li {
-        margin-left: 1rem;
-        height: 100%;       
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;        
-        height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 0 0.5rem;
-
-        &:hover {            
-            background-color: rgba(255, 255, 255, 0.3);            
-        }
-    }
-}
-
-.card-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1rem;    
-    margin-top: 4rem;    
-
-    .card-body {
-        background-color: #fff;       
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);        
-
-        .card-img-top {
-            img {
-                width: 100%;
-                height: auto;  
-                border-radius: 5px 5px 0 0;              
-            }
-        }
-
-        .card-meta {
-            font-size: 0.8rem;
-        }
-
-        .card-title, .card-text, .card-meta {
-            padding: 0 1rem;
-        }
-    }
-}
-
-.banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?cats');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 350px;
-
-    span {
-        font-size: 2rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #fff;
-    }
-}
-
-.pagination {
-    margin: 2rem 0;
-    display: flex;
-
-    div {
-        margin: 0 0.5rem;
-    }
-}
-
-footer {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 3rem 0;
-
-    ul.menu {
-        list-style: none;
-        margin: 2rem 0 0;
-        padding: 0;        
-
-        a {
-            color: #fff;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+    .header {
+        width: 100%;
+        min-height: auto;
     }
 }
