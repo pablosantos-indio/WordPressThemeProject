@@ -1,5 +1,11 @@
 <?php
 // functions.php - Funções e definições do tema.
+function mytheme_enqueue_styles() {
+    // Carrega os estilos do tema.
+    wp_enqueue_style('mytheme-style', get_stylesheet_uri(), []);
+}
+
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
 
 function meu_tema_scripts() {
     // Carrega os estilos e scripts.
