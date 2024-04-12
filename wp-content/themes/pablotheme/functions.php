@@ -7,6 +7,15 @@ function mytheme_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
 
+function mytheme_menus() {
+    // Registra os menus do tema.
+    register_nav_menus([
+            'primary' => 'Primary Menu',
+            'footer' => 'Footer Menu',
+    ]);
+}
+add_action('init', 'mytheme_menus');
+
 function meu_tema_scripts() {
     // Carrega os estilos e scripts.
     wp_enqueue_style('style', get_stylesheet_uri());
